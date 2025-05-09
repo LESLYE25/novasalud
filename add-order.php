@@ -70,10 +70,6 @@
 
 
     <div class="container-fluid">
-
-
-
-
       <div class="row">
         <div class="col-lg-11" style="    margin-left: 5%;">
           <div class="card">
@@ -135,9 +131,9 @@
                     <thead>
                       <tr>
                         <th style="width:40%;">Medicina</th>
-                        <th style="width:20%;">Cantidad Por Unidad</th>
+                        <th style="width:20%;">Costo</th>
                         <th style="width:10%;">Cantidades</th>
-                        <th style="width:15%;">Disponibles</th>
+                        <th style="width:15%;">Lleva</th>
                         <th style="width:25%;">Total</th>
                         <th style="width:10%;">Acción</th>
                       </tr>
@@ -247,7 +243,7 @@
 
           <div class="form-group">
             <div class="row">
-              <label for="vat" class="col-sm-2 control-label gst">IVA 19%</label>
+              <label for="vat" class="col-sm-2 control-label gst">IGV 18%</label>
               <div class="col-sm-4">
                 <input type="text" class="form-control" id="vat" name="gstn" readonly="true" />
                 <input type="hidden" class="form-control" id="vatValue" name="vatValue" />
@@ -274,9 +270,6 @@
                 <select class="form-control" name="paymentType" id="paymentType">
                   <option value="">~~Seleccionar~~</option>
                   <option value="2">Efectivo</option>
-                  <option value="4">Nequi</option>
-                  <option value="5">Google Pay</option>
-                  <option value="6">Amazon Pay</option>
                   <option value="1">Cheque</option>
                   <option value="3">Tarjeta de Crédito</option>
 
@@ -295,7 +288,6 @@
                   <option value="">~~Seleccionar~~</option>
                   <option value="1">Pago Completo</option>
                   <option value="2">Pago Parcial</option>
-                  <option value="3">Pago Pendiente</option>
                 </select>
               </div>
 
@@ -303,7 +295,7 @@
               <div class="col-sm-4">
                 <select class="form-control" name="paymentPlace" id="paymentPlace">
                   <option value="">~~Seleccionar~~</option>
-                  <option value="1">Colombia</option>
+                  <option value="1">Botica</option>
                   <option value="2">Internet</option>
                 </select>
               </div>

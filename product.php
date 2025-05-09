@@ -77,7 +77,7 @@ $result = $connect->query($sql);
                                         <?php 
                                         if ($row['stock'] <= 0) {
                                             echo "<span class='label label-danger'>Agotado</span>";
-                                        } elseif ($row['stock'] <= 5) {
+                                        } elseif ($row['stock'] <= 2) {
                                             echo "<span class='label label-warning'>Bajo (" . $row['stock'] . ")</span>";
                                         } else {
                                             echo "<span class='label label-success'>" . $row['stock'] . "</span>";

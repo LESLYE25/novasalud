@@ -1,5 +1,4 @@
 <?php
-
 include('./constant/check.php');
 require_once('./constant/connect.php');
 ?>
@@ -7,43 +6,56 @@ require_once('./constant/connect.php');
 <div id="main-wrapper">
 
     <div class="header">
-        <marquee class="d-lg-none d-block">
-            <div class="ml-lg-5 pl-lg-5 ">
-                <b id="ti" class="ml-lg-5 pl-lg-5"></b>
+        <!-- Marquee solo visible en pantallas pequeñas -->
+        <marquee class="d-lg-none d-block bg-light text-dark font-weight-bold py-1">
+            <div class="text-center">
+                <b id="ti"></b>
             </div>
         </marquee>
-        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm px-3">
+            <!-- Logo -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.php">
-                    <b><img src="./assets/uploadImage/Logo/logo.jpg" style="width: 80%;" alt="homepage" class="dark-logo" style="width:80%;height:auto;" /></b>
+                <a class="navbar-brand">
+                    <img src="./assets/uploadImage/Logo/logo.jpg" alt="logo" class="dark-logo" style="max-height: 50px; width: auto;" />
                 </a>
             </div>
-            <div class="navbar-collapse">
-                <ul class="navbar-nav  mt-md-0">
-                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
-                    <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-                </ul>
-                <ul class="navbar-nav my-lg-0 ml-auto">
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Contenido colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+               
+
+                <!-- Usuario -->
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="./assets/uploadImage/Profile/usuario-admin.png" alt="user" class="profile-pic" /></a>
+                        <a class="nav-link dropdown-toggle text-muted" href="#" data-toggle="dropdown">
+                            <img src="./assets/uploadImage/Profile/usuario-admin.png" alt="user" class="profile-pic rounded-circle" style="height: 40px; width: 40px;" />
+                        </a>
                         <div class="dropdown-menu dropdown-menu-right animated zoomIn">
-                            <ul class="dropdown-user">
-                                <?php if (isset($_SESSION['userId']) && $_SESSION['userId'] == 1) { ?>
-                                <?php } ?>
-                                <li><a href="./constant/logout.php"><i class="fa fa-power-off"></i> Cerrar Sesión</a></li>
+                            <ul class="dropdown-user list-unstyled mb-0">
+                                <?php if (isset($_SESSION['userId']) && $_SESSION['userId'] == 1): ?>
+                                    <!-- Aquí puedes añadir opciones solo para admin -->
+                                <?php endif; ?>
+                                <li><a class="dropdown-item" href="./constant/logout.php"><i class="fa fa-power-off"></i> Cerrar Sesión</a></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
-
     </div>
-    <script language="javascript">
-        var today = new Date();
-        document.getElementById('ti').innerHTML = today;
 
-        var today = new Date();
-        document.getElementById('time').innerHTML = today;
+    <!-- Script para mostrar la hora -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var today = new Date();
+            document.getElementById('ti').innerHTML = today.toLocaleString();
+        });
     </script>
+</div>

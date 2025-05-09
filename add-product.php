@@ -58,10 +58,6 @@
                                     <input type="text" class="form-control" id="rate" placeholder="CPA" name="rate" autocomplete="off" required="" pattern="^[0-9]+$" />
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="control-label">PRM</label>
-                                    <input type="text" class="form-control" id="mrp" placeholder="PRM" name="mrp" autocomplete="off" required="" pattern="^[0-9]+$" />
-                                </div>
-                                <div class="form-group col-md-6">
                                     <label class="control-label">No de Lote</label>
                                     <input type="text" class="form-control" id="Batch No" placeholder="Batch No" name="bno" autocomplete="off" required="" pattern="^[Aa-Zz]+$" />
                                 </div>
@@ -108,14 +104,14 @@
                                         <option value="2">No disponible</option>
                                     </select>
                                 </div>
-
-                                <div class="col-md-1 mx-auto">
-                                    <button type="submit" name="create" id="createProductBtn" class="btn btn-primary btn-flat m-b-30 m-t-30">Enviar</button>
-                                </div>
                                 <div class="form-group col-md-6">
                                     <label class="control-label">Stock</label>
                                     <input type="number" class="form-control" id="stock" placeholder="Stock actual" name="stock" required min="0" />
                                 </div>
+                                <div class="col-md-1 mx-auto">
+                                    <button type="submit" name="create" id="createProductBtn" class="btn btn-primary btn-flat m-b-30 m-t-30">Enviar</button>
+                                </div>
+                                
 
                             </form>
                         </div>

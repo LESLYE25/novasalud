@@ -9,7 +9,6 @@ if($_POST) {
     $rate           = $_POST['rate'];
     $brandName      = $_POST['brandName'];
     $categoryName   = $_POST['categoryName'];
-    $mrp            = $_POST['mrp'];
     $bno            = $_POST['bno'];
     $expdate        = $_POST['expdate'];
     $productStatus  = $_POST['productStatus'];
@@ -29,7 +28,7 @@ if($_POST) {
 
     // Consulta preparada
     $stmt = $connect->prepare("INSERT INTO product 
-        (product_name, product_image, brand_id, categories_id, quantity, rate, mrp, bno, expdate, stock, added_date, active, status)
+        (product_name, product_image, brand_id, categories_id, quantity, rate, bno, expdate, stock, added_date, active, status)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     $active = $productStatus;
@@ -43,7 +42,6 @@ if($_POST) {
         $categoryName,
         $quantity,
         $rate,
-        $mrp,
         $bno,
         $expdate,
         $stock,
