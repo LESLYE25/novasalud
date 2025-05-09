@@ -2155,7 +2155,9 @@ textarea {
 ------------------*/
 /*    Brand color
 ----------------------*/
-
+.card {
+  margin-bottom: 30px;
+}
 .card .card-subtitle {
   color: #99abb4;
   font-weight: 300;
@@ -2268,8 +2270,7 @@ textarea {
 .card {
   background: #ffffff none repeat scroll 0 0;
   margin: 15px 0;
-  padding: 30px;
-  padding-top: 0%;
+  padding: 20px;
   border: 0 solid #e7e7e7;
   border-radius: 5px;
   box-shadow: 0px 12px 23px 0px rgb(160 44 250 / 4%);
@@ -6935,10 +6936,18 @@ tbody tr td:last-child {
   }
 }
 .dashboard {
-    flex: 1 1 25%; /* O puedes usar un valor como 33.33% */
-    margin: 10px;
+  margin-bottom: 50px; /* Espacio entre las tarjetas */
 }
 
+.card {
+  border-radius: 1rem;
+  transition: transform 0.3s ease; /* Transición suave cuando el mouse pasa por encima */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
 .card:hover {
   transform: translateY(-5px); /* Efecto de desplazamiento cuando se pasa el mouse */
