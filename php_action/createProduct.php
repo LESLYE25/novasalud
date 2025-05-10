@@ -1,9 +1,7 @@
 <?php 	
 require_once 'core.php';
 
-$valid['success'] = array('success' => false, 'messages' => array());
-
-if($_POST) {	
+if ($_POST) {	
     $productName    = $_POST['productName'];
     $quantity       = $_POST['quantity'];
     $rate           = $_POST['rate'];
@@ -15,27 +13,26 @@ if($_POST) {
     $stock          = $_POST['stock'];
     $orderDate      = date('Y-m-d');
 
-    // Manejo de la imagen
+    // Subida de imagen
     $image = $_FILES['Medicine']['name'];
     $target = "../assets/myimages/" . basename($image);
-    $upload = move_uploaded_file($_FILES['Medicine']['tmp_name'], $target);
 
-    if (!$upload) {
-        $valid['messages'] = "Error al subir la imagen.";
-        echo json_encode($valid);
+    if (!move_uploaded_file($_FILES['Medicine']['tmp_name'], $target)) {
+        // Si falla la subida, redirige con error (opcional: mostrar mensaje en pantalla)
+        header("Location: ../product.php?error=imagen");
         exit;
     }
 
-    // Consulta preparada
+    // Preparar la consulta
     $stmt = $connect->prepare("INSERT INTO product 
         (product_name, product_image, brand_id, categories_id, quantity, rate, bno, expdate, stock, added_date, active, status)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     $active = $productStatus;
     $status = 1;
 
     $stmt->bind_param(
-        "ssiiiisssisii",
+        "ssiiiisssiii",
         $productName,
         $image,
         $brandName,
@@ -51,18 +48,16 @@ if($_POST) {
     );
 
     if ($stmt->execute()) {
-        $valid['success'] = true;
-        $valid['messages'] = "Producto agregado correctamente.";
-        header('Location: ../product.php');
+        // Redirige si todo sale bien
+        header('Location: ../product.php?success=1');
         exit;
     } else {
-        $valid['success'] = false;
-        $valid['messages'] = "Error al agregar producto: " . $stmt->error;
+        // Error en la ejecución
+        header("Location: ../product.php?error=bd");
+        exit;
     }
 
     $stmt->close();
     $connect->close();
-
-    echo json_encode($valid);
 }
 ?>

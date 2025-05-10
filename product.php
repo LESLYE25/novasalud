@@ -32,7 +32,7 @@ $result = $connect->query($sql);
                                 <th class="text-center">#</th>
                                 <th style="width:10%;">Foto</th>
                                 <th>Nombre Medicina</th>
-                                <th>Cant Por Unidad</th>
+                                <th>Precio Por Unidad</th>
                                 <th>Cantidad</th>
                                 <th>Stock</th>
                                 <th>Fabricante</th>

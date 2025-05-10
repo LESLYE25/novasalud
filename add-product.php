@@ -54,7 +54,7 @@
                                     <input type="text" class="form-control" id="quantity" placeholder="Cantidad" name="quantity" autocomplete="off" required="" pattern="^[0-9]+$" />
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="control-label">Cantidad Por Unidad</label>
+                                    <label class="control-label">Precio Por Unidad</label>
                                     <input type="text" class="form-control" id="rate" placeholder="CPA" name="rate" autocomplete="off" required="" pattern="^[0-9]+$" />
                                 </div>
                                 <div class="form-group col-md-6">

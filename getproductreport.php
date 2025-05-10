@@ -35,7 +35,6 @@ if ($_POST) {
 					<th>Usuario</th>
 
 					<th>Cantidad</th>
-					<th>PRM</th>
 					<th>Fecha Expiración</th>
 					<th>Fecha Ingreso</th>
 				</tr>
@@ -67,9 +66,6 @@ if ($_POST) {
 
 								<td>
 									<center><?php echo $result['quantity']; ?></center>
-								</td>
-								<td>
-									<center><?php echo $result['mrp']; ?></center>
 								</td>
 								<td>
 									<center><?php echo $result['expdate']; ?></center>
